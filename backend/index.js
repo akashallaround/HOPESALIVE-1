@@ -44,6 +44,11 @@ app.use("/api/uploads", express.static("uploads"));
 app.use("/api/docusign", docuSignRoutes);
 app.use("/api/pets", petRoutes);
 
+// ✅ Add GET / route
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // Start server
 app.listen(port, async () => {
   await connectDB(process.env.MONGO_URI);
