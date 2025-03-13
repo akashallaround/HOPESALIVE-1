@@ -32,17 +32,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// 🔥 Allow all origins for debugging (Not secure for production)
-
-
-app.use(
-  cors({
-    origin: "https://hopesalive-qj6y.vercel.app", // Allow frontend domain
-    credentials: true, // If using cookies or authentication
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-  })
-);
-
+// Enable CORS for all origins
+app.use(cors({ origin: "*" }));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(204); // Prevents CORS preflight errors
+    }
+    next();
+});
 
 // Routes
 app.use("/api/users", userRoutes);
