@@ -1,6 +1,7 @@
 import User from "../Models/userModel.js";
 import Incident from "../Models/incidentModel.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
+
 import jwt from "jsonwebtoken";
 import generateToken from '../utils/generateToken.js';
 
