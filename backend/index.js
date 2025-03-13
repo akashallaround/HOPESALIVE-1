@@ -31,14 +31,9 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["https://hopesalive-ayushh124.vercel.app", "http://localhost:5173"], // ✅ Updated Frontend URL
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+
+// 🔥 Allow all origins for debugging (Not secure for production)
+app.use(cors());
 
 // Routes
 app.use("/api/users", userRoutes);
@@ -51,6 +46,6 @@ app.use("/api/pets", petRoutes);
 
 // Start server
 app.listen(port, async () => {
-  await connectDB(process.env.MONGO_URI); // ✅ Fixed Environment Variable
+  await connectDB(process.env.MONGO_URI);
   console.log(`🚀 Server is running on port ${port}`);
 });
