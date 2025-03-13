@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://hopes-alive.vercel.app", "http://localhost:5173"],
+    origin: ["https://hopesalive-ayushh124.vercel.app", "http://localhost:5173"], // ✅ Updated Frontend URL
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -51,7 +51,6 @@ app.use("/api/pets", petRoutes);
 
 // Start server
 app.listen(port, async () => {
-  await connectDB(process.env.MONGODB_URI); // ✅ Pass MongoDB URI
+  await connectDB(process.env.MONGO_URI); // ✅ Fixed Environment Variable
   console.log(`🚀 Server is running on port ${port}`);
 });
-
