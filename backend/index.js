@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // 🔥 Allow all origins for debugging (Not secure for production)
-import cors from "cors";
+
 
 app.use(
   cors({
