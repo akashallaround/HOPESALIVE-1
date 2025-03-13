@@ -33,7 +33,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // 🔥 Allow all origins for debugging (Not secure for production)
-app.use(cors());
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "https://hopesalive-qj6y.vercel.app", // Allow frontend domain
+    credentials: true, // If using cookies or authentication
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  })
+);
+
 
 // Routes
 app.use("/api/users", userRoutes);
