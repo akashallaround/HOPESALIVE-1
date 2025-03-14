@@ -32,18 +32,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// ✅ Proper CORS Configuration
+// CORS Configuration
 app.use(
   cors({
-    origin: "*", // Allows all origins
+    origin: "https://hopesalive-mdfx.vercel.app", // Replace with your frontend URL
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
   })
 );
 
-// ✅ Manually set headers (extra layer of protection)
+// Manually set headers (extra layer of protection)
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://hopesalive-mdfx.vercel.app");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
@@ -63,7 +63,7 @@ app.use("/api/uploads", express.static("uploads"));
 app.use("/api/docusign", docuSignRoutes);
 app.use("/api/pets", petRoutes);
 
-// ✅ Test route
+// Test route
 app.get("/", (req, res) => {
   res.send("Server is running with updated CORS settings!");
 });
