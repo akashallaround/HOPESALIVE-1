@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://hopesalive-zh55.onrender.com",
+  baseURL: "https://hopesalive-2-rft7.onrender.com",
   // your backend URL
   withCredentials: true,
   headers: {
