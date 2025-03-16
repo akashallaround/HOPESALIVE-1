@@ -35,17 +35,25 @@ app.use(cookieParser());
 // CORS Configuration
 app.use(
   cors({
-    origin: "https://hopesalive-mdfx.vercel.app", // Replace with your frontend URL
+    origin: ["https://hopesalive-ayushh124.vercel.app", "http://localhost:3000"], // Allow both production and development URLs
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
+    credentials: true // Allow credentials
   })
 );
 
 // Manually set headers (extra layer of protection)
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://hopesalive-mdfx.vercel.app");
+  const allowedOrigins = ["https://hopesalive-ayushh124.vercel.app", "http://localhost:3000"];
+  const origin = req.headers.origin;
+  
+  if (allowedOrigins.includes(origin)) {
+    res.header("Access-Control-Allow-Origin", origin);
+  }
+  
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
 
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
