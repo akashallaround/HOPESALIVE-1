@@ -58,7 +58,7 @@ const RegisterForm = () => {
       );
       console.log("With data:", formData);
 
-      const response = await fetch("https://hopesalive-7-c190.onrender.com/api/users/register", {
+      const response = await fetch("https://hopesalive-lldc.vercel.app/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
