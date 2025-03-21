@@ -14,7 +14,7 @@ const VolunteerAssignedCases = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "https://hopesalive-zh55.onrender.com/api/volunteer/my-cases",
+          "https://hopesalive-7-c190.onrender.com/api/volunteer/my-cases",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

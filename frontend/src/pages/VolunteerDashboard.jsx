@@ -37,7 +37,7 @@ const VolunteerDashboard = () => {
         
         // Fetch recent cases (assigned to volunteer)
         const recentResponse = await axios.get(
-          "https://hopesalive-zh55.onrender.com/api/volunteer/my-cases",
+          "https://hopesalive-7-c190.onrender.com/api/volunteer/my-cases",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -49,7 +49,7 @@ const VolunteerDashboard = () => {
 
         // Fetch available cases
         const availableResponse = await axios.get(
-          "https://hopesalive-zh55.onrender.com/api/volunteer/incidents",
+          "https://hopesalive-7-c190.onrender.com/api/volunteer/incidents",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

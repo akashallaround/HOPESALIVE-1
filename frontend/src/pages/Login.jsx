@@ -28,7 +28,7 @@ const LoginForm = () => {
     const loadingToast = toast.loading("Logging in...");
 
     try {
-      const response = await fetch("https://hopesalive-7-c190.onrender.com", {
+      const response = await fetch("https://hopesalive-7-c190.onrender.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

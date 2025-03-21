@@ -22,7 +22,7 @@ const AvailableCases = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "https://hopesalive-zh55.onrender.com/api/volunteer/incidents",
+          "https://hopesalive-7-c190.onrender.com/api/volunteer/incidents",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -135,7 +135,7 @@ const AvailableCases = () => {
               >
                 {case_.animalInfo?.photo && (
                   <img
-                    src={`https://hopesalive-zh55.onrender.com/api/uploads/${case_.animalInfo.photo}`}
+                    src={`https://hopesalive-7-c190.onrender.com/api/uploads/${case_.animalInfo.photo}`}
                     alt="Case"
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
