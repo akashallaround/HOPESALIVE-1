@@ -35,7 +35,7 @@ app.use(cookieParser());
 // CORS Configuration
 app.use(
   cors({
-    origin: ["https://hopesalive-ayushh124.vercel.app", "http://localhost:3000"], // Allow both production and development URLs
+    origin: ["https://hopesalive-iqub.vercel.app", "http://localhost:3000"], // Allow both production and development URLs
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Authorization",
     credentials: true // Allow credentials
@@ -44,7 +44,7 @@ app.use(
 
 // Manually set headers (extra layer of protection)
 app.use((req, res, next) => {
-  const allowedOrigins = ["https://hopesalive-ayushh124.vercel.app", "http://localhost:3000"];
+  const allowedOrigins = ["https://hopesalive-iqub.vercel.app", "http://localhost:3000"];
   const origin = req.headers.origin;
   
   if (allowedOrigins.includes(origin)) {
