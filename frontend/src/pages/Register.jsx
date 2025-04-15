@@ -54,11 +54,11 @@ const RegisterForm = () => {
       // Log the request details
       console.log(
         "Attempting to connect to:",
-        "https://hopesalive-7-c190.onrender.com/api/users/register"
+        "https://hopesalive-4-witt.onrender.com/api/users/register"
       );
       console.log("With data:", formData);
 
-      const response = await fetch("https://hopesalive-lldc.vercel.app/api/users/register", {
+      const response = await fetch("https://hopesalive-4-witt.onrender.com/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
